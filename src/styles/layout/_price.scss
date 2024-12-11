@@ -1,0 +1,79 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+
+.price {
+  @include flex($align: center, $justify: center, $gap: 1rem);
+  background: $c2;
+  padding: 3rem;
+
+  @include respond-to(mobile) {
+    padding: 1rem;
+  }
+}
+
+.list-price-item {
+  @include flex($wrap: wrap, $gap: 0.5rem);
+  max-width: 1300px;
+  flex: 1;
+
+  .price-item {
+    flex: 1 1 190px;
+    border-radius: $border-radius;
+    padding: 1.125rem;
+    border: 0.25rem solid #fff;
+    margin: auto;
+    text-align: center;
+
+    @include respond-to(mobile) {
+      &:nth-child(3) {
+        order: -2;
+      }
+      &:nth-child(2) {
+        order: -1;
+      }
+    }
+
+    h3 {
+      @include font-clamp(x-large);
+      color: $c4;
+    }
+
+    .price {
+      display: block;
+      @include font-clamp(medium);
+      font-weight: bold;
+      margin: 0.5rem auto;
+      padding: 1rem;
+      border-top: 0.25rem solid #fff;
+      border-bottom: 0.25rem solid #fff;
+
+      span {
+        @include font-clamp(x-small);
+        color: $c5;
+        text-decoration: line-through;
+      }
+    }
+  }
+}
+
+.list-benefits {
+  @include font-clamp(medium);
+  max-width: 300px;
+  margin: 0.875rem auto;
+  font-style: italic;
+  color: $c4;
+  line-height: 2;
+
+  li {
+    @include flex($align: center, $gap: 0.5rem);
+
+    &::after {
+      display: block;
+      content: "";
+      background: $primary;
+      height: 0.5rem;
+      width: 0.5rem;
+      border-radius: 100%;
+    }
+  }
+}
