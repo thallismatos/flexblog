@@ -13,7 +13,7 @@
 
 ### 🖱 Acesso
 
-Acesse o site clicando ***[aqui](https://flexblog.vercel.app/)***.
+Acesse o site clicando ***[aqui](https://blogflex.vercel.app/)***.
 
 ##
 
