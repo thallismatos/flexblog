@@ -1,0 +1,30 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+
+.list-quality {
+  margin: 1rem 0;
+  @include flex($align: flex-start, $gap: 1rem, $wrap: wrap);
+
+  .quality-item {
+    flex: 1 1 300px;
+
+    .details::before {
+      display: inline-block;
+      content: "";
+      width: 0.5rem;
+      height: 2.2rem;
+      margin-right: 10px;
+      vertical-align: bottom;
+    }
+
+    &:nth-of-type(3n + 1) .details::before {
+      background: $tertiary-1;
+    }
+    &:nth-of-type(3n + 2) .details::before {
+      background: $tertiary-2;
+    }
+    &:nth-of-type(3n + 3) .details::before {
+      background: $tertiary-3;
+    }
+  }
+}
