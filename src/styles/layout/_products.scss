@@ -1,0 +1,31 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+
+.list-products {
+  @include flex($wrap: wrap, $gap: 1rem);
+  padding: 1rem 0;
+
+  .product-item {
+    flex: 1 1 195px;
+    align-self: flex-start;
+
+    h3 {
+      background: $c2;
+      padding: 2rem 0;
+      @include font-clamp(large);
+      color: $c4;
+      padding: 2rem 1rem;
+    }
+  }
+}
+
+.purple {
+  border-top: 0.25rem solid $tertiary-1;
+}
+.pink {
+  border-top: 0.25rem solid $tertiary-2;
+}
+
+.blue {
+  border-top: 0.25rem solid $tertiary-3;
+}
