@@ -1,2 +1,52 @@
 @use "../utils/mixins" as *;
 @use "../utils/variables" as *;
+
+.contact-info-bg {
+  background: $secondary;
+  color: $c1;
+}
+
+.contact-info {
+  @include font-clamp(small);
+  @include flex(
+    $wrap: wrap,
+    $justify: space-between,
+    $align: center,
+    $gap: 0.5rem
+  );
+
+  @include respond-to(mobile) {
+    justify-content: center;
+    gap: 0.25rem 2rem;
+  }
+}
+
+.header-bg {
+  background: $primary;
+  color: $c1;
+}
+
+.navbar {
+  @include flex($justify: space-between, $align: center);
+
+  @include respond-to(mobile) {
+    justify-content: center;
+  }
+
+  .logo {
+    @include font-clamp(x-large);
+    font-weight: bold;
+
+    @include respond-to(mobile) {
+      display: none;
+    }
+  }
+
+  .menu {
+    @include flex($gap: 1rem);
+
+    li {
+      @include font-clamp(small);
+    }
+  }
+}
